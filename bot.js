@@ -6,10 +6,10 @@ const app = express();
 app.use(express.json());
 
 // 🔑 أدخل توكن بوتك
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '8396003328:AAHlkUGTuTDPaDyh5mCl6IrZ5jHusigq5nc';
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '8423630325:AAEuyKfGpcVVT4QxyoxgwH3axRlEVDx5WSI';
 const bot = new TelegramBot(TELEGRAM_TOKEN, {polling: true});
 
-console.log('🚀 البوت يعمل: @Ahmed11AlHamoud_bot');
+console.log('🚀 البوت يعمل: @Ahmed15AlHamoud_bot');
 
 // 📌 أمر البداية
 bot.onText(/\/start/, (msg) => {
